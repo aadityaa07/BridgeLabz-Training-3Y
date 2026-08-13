@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #e8f0c8;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            border: 2px solid #333;
+        }
+
+        td {
+            border: 1px solid #555;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .heading {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 12px;
+        }
+
+        .label {
+            width: 25%;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 200px;
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            width: 290px;
+            height: 80px;
+            resize: none;
+        }
+
+        input[type="file"] {
+            font-size: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        button {
+            padding: 5px 12px;
+            font-size: 16px;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <table>
+
+            <tr>
+                <td colspan="2" class="heading">
+                    Registration Form
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Full Name</td>
+                <td>
+                    <input type="text" name="name"
+                           placeholder="Enter your name">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Email</td>
+                <td>
+                    <input type="email" name="email"
+                           placeholder="abc@gmail.com">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Phone Number</td>
+                <td>
+                    <input type="tel" name="phone"
+                           placeholder="9876543210">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Date of Birth</td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male">
+                    Male
+
+                    <input type="radio" name="gender" value="female">
+                    Female
+
+                    <input type="radio" name="gender" value="other">
+                    Other
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Skills</td>
+                <td>
+                    <input type="checkbox" name="skills" value="html">
+                    HTML
+
+                    <input type="checkbox" name="skills" value="css">
+                    CSS
+
+                    <input type="checkbox" name="skills" value="javascript">
+                    JavaScript
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Course</td>
+                <td>
+                    <select name="course">
+                        <option value="">--Select Course--</option>
+                        <option value="btech">B.Tech</option>
+                        <option value="bca">BCA</option>
+                        <option value="mca">MCA</option>
+                        <option value="bba">BBA</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Address</td>
+                <td>
+                    <textarea name="address"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Upload Resume</td>
+                <td>
+                    <input type="file" name="resume">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="buttons">
+                    <button type="submit">Register</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>
