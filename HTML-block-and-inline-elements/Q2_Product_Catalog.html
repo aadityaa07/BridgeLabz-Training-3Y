@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2 - Product Catalog</title>
+</head>
+<body>
+
+    <header>
+        <h1>Online Store - Product Catalog</h1>
+    </header>
+
+    <main>
+        <!-- Product table with colspan used for the title row -->
+        <table border="1" cellpadding="8">
+            <tr>
+                <th colspan="5">Available Products</th>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Availability</th>
+            </tr>
+
+            <!-- Product 1 -->
+            <tr>
+                <td><img src="wireless-mouse.jpg" alt="Wireless Mouse" width="80" height="80"></td>
+                <td>Wireless Mouse</td>
+                <td>Ergonomic wireless mouse with USB receiver.</td>
+                <td>Rs. 599</td>
+                <td>In Stock</td>
+            </tr>
+
+            <!-- Product 2 -->
+            <tr>
+                <td><img src="bluetooth-headphones.jpg" alt="Bluetooth Headphones" width="80" height="80"></td>
+                <td>Bluetooth Headphones</td>
+                <td>Over-ear headphones with noise cancellation.</td>
+                <td>Rs. 2,499</td>
+                <td>In Stock</td>
+            </tr>
+
+            <!-- Product 3: uses rowspan since two variants share the same image and price -->
+            <tr>
+                <td rowspan="2"><img src="tshirt.jpg" alt="Cotton T-Shirt" width="80" height="80"></td>
+                <td>Cotton T-Shirt (Blue)</td>
+                <td>100% cotton, round neck, regular fit.</td>
+                <td rowspan="2">Rs. 499</td>
+                <td>In Stock</td>
+            </tr>
+            <tr>
+                <td>Cotton T-Shirt (Black)</td>
+                <td>100% cotton, round neck, regular fit.</td>
+                <td>Out of Stock</td>
+            </tr>
+
+            <!-- Product 4 -->
+            <tr>
+                <td><img src="water-bottle.jpg" alt="Steel Water Bottle" width="80" height="80"></td>
+                <td>Steel Water Bottle</td>
+                <td>Insulated stainless steel bottle, 1 litre capacity.</td>
+                <td>Rs. 349</td>
+                <td>In Stock</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Online Store. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
