@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Question 2: Embed a Google Map using an iframe -->
+    <meta charset="UTF-8">
+    <title>Q2 - Google Map Embed</title>
+</head>
+<body>
+
+    <h1>Location of My City</h1>
+
+    <!-- 
+        title       : provides an accessible name for the iframe (used by screen readers)
+        width/height: define the size of the map
+        loading="lazy": tells the browser to delay loading the iframe's content 
+                         until it is about to enter the visible viewport.
+                         This improves page load speed and saves bandwidth
+                         when the iframe is below the fold (not immediately visible).
+    -->
+    <iframe
+        title="Google Map showing my city"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1234567.0!2d77.6737!3d27.4924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+        width="600"
+        height="450"
+        loading="lazy">
+    </iframe>
+
+</body>
+</html>
