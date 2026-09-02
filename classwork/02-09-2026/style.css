@@ -1,0 +1,26 @@
+
+
+.container{
+    width: 400px;
+    height: 500px;
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{
+    width: 200px;
+    height: 300px;
+    border:1px solid black ;
+    text-align: center;
+    background-image: repeating-radial-gradient(red 0% 20%,blue 20% 40%);
+    transform: transform 1s ease;
+       
+}
+.card:hover{
+    box-shadow: -10px -10px 20px red,
+    10px 10px 20px blue;
+    transform: translateY(-30px);
+
+}
