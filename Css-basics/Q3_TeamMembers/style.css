@@ -1,0 +1,41 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background-color: #f9fafb; }
+
+.page-title {
+  text-align: center;
+  padding: 2rem;
+  color: #1f2937;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 2rem 3rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.card h2 { color: #111827; margin-bottom: 0.3rem; }
+.card h3 { color: #6b7280; font-weight: 500; margin-bottom: 0.8rem; }
+.card p { color: #374151; font-size: 0.95rem; }
+
+.card.lead {
+  background-color: #fef3c7;
+  border: 2px solid #f59e0b;
+}
+
+@media (max-width: 600px) {
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+}
