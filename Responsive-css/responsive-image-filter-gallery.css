@@ -1,0 +1,94 @@
+/* ============================================
+   Responsive Image Filter Gallery
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+}
+
+header, footer {
+  background-color: #23303f;
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #b9c4d0;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* --------------------------------------------
+   CSS Grid gallery: auto-fit creates as many
+   columns as will fit, each at least 200px wide,
+   and columns collapse automatically as the
+   viewport shrinks — no extra media query needed
+   for the general reflow.
+--------------------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.gallery-item {
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;              /* keeps the image's rounded corners clean */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /* transition applies to the filter property so the
+     removal on hover animates smoothly rather than snapping */
+  transition: filter 0.4s ease;
+}
+
+.gallery-item figcaption {
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+/* Each image gets its own distinct CSS filter */
+.gallery-item:nth-child(1) img { filter: blur(3px); }
+.gallery-item:nth-child(2) img { filter: grayscale(100%); }
+.gallery-item:nth-child(3) img { filter: sepia(90%); }
+.gallery-item:nth-child(4) img { filter: brightness(1.6); }
+.gallery-item:nth-child(5) img { filter: contrast(1.8); }
+.gallery-item:nth-child(6) img { filter: hue-rotate(180deg); }
+
+/* On hover, every filter is removed, revealing the true image */
+.gallery-item img:hover {
+  filter: none;
+}
+
+/* --------------------------------------------
+   Below 600px, force a single column regardless
+   of how minmax() would otherwise resolve, so
+   images always stack cleanly on small phones.
+--------------------------------------------- */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

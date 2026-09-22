@@ -1,0 +1,127 @@
+/* ============================================
+   Filter Cards with Animation
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+}
+
+header, footer {
+  background-color: #23303f;
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #b9c4d0;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 20px 70px;
+}
+
+/* --------------------------------------------
+   Three cards arranged with Flexbox
+--------------------------------------------- */
+.profile-row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  flex: 1 1 240px;
+  max-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* animate the lift (transform) and the shadow together with hover */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  /* run the fade-in once when the page loads */
+  animation: fade-in 0.8s ease both;
+}
+
+/* Stagger the three cards slightly so they don't all
+   appear at the exact same instant */
+.profile-card:nth-child(1) { animation-delay: 0s; }
+.profile-card:nth-child(2) { animation-delay: 0.15s; }
+.profile-card:nth-child(3) { animation-delay: 0.3s; }
+
+.profile-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  filter: grayscale(100%);
+  /* the image's own filter transition is separate from the
+     card's transform/shadow transition above */
+  transition: filter 0.35s ease;
+}
+
+.profile-card h2 {
+  margin: 0 0 4px;
+  color: #23303f;
+}
+
+.profile-card p {
+  margin: 0;
+  color: #666666;
+}
+
+/* On hover: lift the whole card and remove the image's filter */
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
+}
+
+.profile-card:hover img {
+  filter: none;
+}
+
+/* --------------------------------------------
+   Keyframe animation: cards fade in and rise
+   slightly into place when the page first loads
+--------------------------------------------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------
+   Below 800px: stack cards vertically instead
+   of side by side
+--------------------------------------------- */
+@media (max-width: 800px) {
+  .profile-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    max-width: 320px;
+    width: 100%;
+  }
+}

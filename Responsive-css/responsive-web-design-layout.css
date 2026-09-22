@@ -1,0 +1,119 @@
+/* ============================================
+   Responsive Web Design Layout
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------
+   Header: logo pinned left, nav links pinned right,
+   using space-between on a flex row
+--------------------------------------------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #23303f;
+  color: #ffffff;
+  padding: 16px 32px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #7fb3d5;
+}
+
+/* --------------------------------------------
+   Main content grows to fill remaining space,
+   pushing the footer to the bottom on short pages
+--------------------------------------------- */
+main {
+  flex: 1;
+  padding: 48px 32px;
+}
+
+/* Three feature boxes laid out horizontally with Flexbox */
+.features {
+  display: flex;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-box {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* transform + box-shadow both animate for a smooth hover lift */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box h2 {
+  margin-top: 0;
+  color: #23303f;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------
+   Footer: centered content at the bottom of the page
+--------------------------------------------- */
+.site-footer {
+  background-color: #23303f;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px;
+}
+
+/* --------------------------------------------
+   Below 750px: feature boxes stack vertically
+   instead of sitting in a row
+--------------------------------------------- */
+@media (max-width: 750px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .site-header {
+    justify-content: center;
+    text-align: center;
+  }
+}
