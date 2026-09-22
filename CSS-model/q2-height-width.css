@@ -1,0 +1,92 @@
+/* ============================================
+   Q2 — Height and Width Practice Layout
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  background-color: #35424f;
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #cdd7e1;
+}
+
+main {
+  flex: 1;              /* pushes footer down even on short pages */
+  display: flex;
+  padding: 40px 20px;
+}
+
+/* --------------------------------------------
+   Flexbox centering: boxes are centered both
+   vertically and horizontally within .stage
+--------------------------------------------- */
+.stage {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.box {
+  border: 3px solid #35424f;
+  border-radius: 10px;
+  padding: 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.box h2 {
+  margin-top: 0;
+}
+
+/* Box A: fixed pixel dimensions — same size regardless of viewport */
+.box-px {
+  width: 220px;
+  height: 220px;
+  background-color: #4a6fa5;
+}
+
+/* Box B: percentage width relative to its flex container,
+   min-height in viewport-height units so it always fills
+   a proportion of the visible screen */
+.box-percent {
+  width: 35%;
+  min-height: 40vh;
+  max-width: 320px;
+  background-color: #3f8f6d;
+}
+
+/* Box C: em-based width (relative to font-size), a fixed
+   max-width cap, a fixed height, and overflow handling so
+   content that doesn't fit scrolls instead of spilling out */
+.box-em {
+  width: 14em;
+  max-width: 260px;
+  height: 220px;
+  background-color: #a5674a;
+  overflow-y: auto;      /* scroll only on the vertical axis */
+}
+
+.overflow-text {
+  text-align: left;
+}

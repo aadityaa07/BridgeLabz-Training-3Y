@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q2 — Height and Width Practice Layout</title>
+  <link rel="stylesheet" href="q2-height-width.css">
+</head>
+<body>
+
+  <header>
+    <h1>Height &amp; Width Practice Layout</h1>
+    <p>Comparing sizing units and the min/max/overflow properties.</p>
+  </header>
+
+  <main>
+    <div class="stage">
+
+      <article class="box box-px">
+        <h2>Box A</h2>
+        <p><strong>Units:</strong> px</p>
+        <p>width: 220px<br>height: 220px</p>
+      </article>
+
+      <article class="box box-percent">
+        <h2>Box B</h2>
+        <p><strong>Units:</strong> % / vh</p>
+        <p>width: 35%<br>min-height: 40vh</p>
+      </article>
+
+      <article class="box box-em">
+        <h2>Box C</h2>
+        <p><strong>Units:</strong> em, with overflow</p>
+        <p class="overflow-text">
+          width: 14em; max-width: 260px; a fixed height with
+          overflow-y: auto so extra text like this scrolls
+          inside the box instead of breaking the layout.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>CSS Practice &middot; Question 2 of 5</p>
+  </footer>
+
+</body>
+</html>

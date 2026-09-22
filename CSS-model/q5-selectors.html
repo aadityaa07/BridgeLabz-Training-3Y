@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5 — Advanced CSS Selectors</title>
+  <link rel="stylesheet" href="q5-selectors.css">
+</head>
+<body>
+
+  <header>
+    <h1>Advanced CSS Selectors</h1>
+    <p>Attribute selectors, pseudo-classes, pseudo-elements, and combinators.</p>
+  </header>
+
+  <main>
+
+    <section id="attribute-selectors">
+      <h2>Attribute Selectors</h2>
+      <p>Styling based on an element's attribute, using <code>[type="text"]</code> and <code>[href^="https"]</code>.</p>
+
+      <form>
+        <label for="name-field">Name (styled via [type="text"]):</label>
+        <input id="name-field" type="text" placeholder="Your name">
+
+        <label for="pass-field">Password (unaffected):</label>
+        <input id="pass-field" type="password" placeholder="Password">
+      </form>
+
+      <ul class="link-list">
+        <li><a href="https://example.com">Secure link (https)</a></li>
+        <li><a href="http://example.com">Insecure link (http)</a></li>
+        <li><a href="/about">Relative link</a></li>
+      </ul>
+    </section>
+
+    <section id="pseudo-classes">
+      <h2>Pseudo-classes</h2>
+      <p>Try hovering the list items, or tabbing to the input with your keyboard to trigger <code>:focus</code>.</p>
+
+      <ul class="fruit-list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Date</li>
+        <li>Elderberry</li>
+      </ul>
+
+      <input type="text" class="focus-demo" placeholder="Focus me (:focus)">
+    </section>
+
+    <section id="pseudo-elements">
+      <h2>Pseudo-elements</h2>
+      <p class="quote-demo">Great design is invisible until you notice how well it works.</p>
+    </section>
+
+    <section id="combinators">
+      <h2>Combinators</h2>
+      <p>Four combinator types applied to a small nested list structure.</p>
+
+      <div class="combinator-demo">
+        <h3>Parent</h3>
+        <p>Descendant paragraph (styled via space combinator)</p>
+        <ul>
+          <li>Direct child li — styled via &gt; combinator</li>
+          <li>
+            Nested li
+            <ul>
+              <li>Grandchild li — NOT styled by &gt; (only direct children are)</li>
+            </ul>
+          </li>
+        </ul>
+        <h4>Adjacent sibling heading (+ combinator)</h4>
+        <p>This paragraph immediately follows the h4 above.</p>
+        <p>General sibling paragraph (~ combinator) — any p after the h4.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CSS Practice &middot; Question 5 of 5</p>
+  </footer>
+
+</body>
+</html>

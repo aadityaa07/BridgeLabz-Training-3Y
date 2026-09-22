@@ -1,0 +1,148 @@
+/* ============================================
+   Q1 — Borders and Padding Demonstration
+   ============================================ */
+
+/* Reset-ish base so margins/paddings behave predictably */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+  line-height: 1.5;
+}
+
+header, footer {
+  background-color: #2f3b4c;
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #c9d2de;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+section h2 {
+  border-bottom: 2px solid #2f3b4c;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------
+   Flexbox row: aligns all demo boxes horizontally
+   and lets them wrap on small screens
+--------------------------------------------- */
+.box-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.box {
+  flex: 1 1 180px;      /* grow, shrink, base width */
+  min-width: 160px;
+  background-color: #ffffff;
+  padding: 16px;
+  text-align: center;
+  /* transition applies to whichever property changes on hover (border-color) */
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.box h3 {
+  margin-top: 0;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+}
+
+/* --------------------------------------------
+   1. Border style examples
+--------------------------------------------- */
+.style-solid {
+  border: 4px solid #4a6fa5;
+}
+.style-solid:hover {
+  border-color: #d9534f;
+}
+
+.style-dashed {
+  border: 4px dashed #4a6fa5;
+}
+.style-dashed:hover {
+  border-color: #d9534f;
+}
+
+.style-double {
+  border: 8px double #4a6fa5;
+}
+.style-double:hover {
+  border-color: #d9534f;
+}
+
+.style-groove {
+  border: 6px groove #4a6fa5;
+}
+.style-groove:hover {
+  border-color: #d9534f;
+}
+
+/* --------------------------------------------
+   2. Border-radius examples (same border, radius varies)
+--------------------------------------------- */
+.radius-none,
+.radius-small,
+.radius-large,
+.radius-circle {
+  border: 4px solid #3f8f6d;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.radius-none:hover,
+.radius-small:hover,
+.radius-large:hover,
+.radius-circle:hover {
+  border-color: #d9534f;
+}
+
+.radius-none    { border-radius: 0; }
+.radius-small   { border-radius: 8px; }
+.radius-large   { border-radius: 24px; }
+.radius-circle  { border-radius: 50%; }   /* turns a square box into a circle */
+
+/* --------------------------------------------
+   3. Padding examples (border kept constant so
+      only the internal spacing changes visually)
+--------------------------------------------- */
+.padding-small,
+.padding-medium,
+.padding-large {
+  border: 3px solid #a5674a;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.padding-small:hover,
+.padding-medium:hover,
+.padding-large:hover {
+  border-color: #d9534f;
+}
+
+.padding-small  { padding: 4px; }
+.padding-medium { padding: 16px; }
+.padding-large  { padding: 40px; }

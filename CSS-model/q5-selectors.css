@@ -1,0 +1,212 @@
+/* ============================================
+   Q5 — Advanced CSS Selectors
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: #f6f5f2;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: #2f3b4c;
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #c9d2de;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px 70px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+section h2 {
+  border-bottom: 2px solid #2f3b4c;
+  padding-bottom: 8px;
+}
+
+code {
+  background-color: #e7e3da;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   1. ATTRIBUTE SELECTORS
+   Target elements based on the presence or value
+   of an HTML attribute, not their tag or class.
+   ============================================ */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+/* [type="text"] matches only <input> elements whose type
+   attribute is exactly "text" — the password field is untouched */
+input[type="text"] {
+  border: 2px solid #4a6fa5;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+input[type="password"] {
+  border: 2px solid #999999;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* [href^="https"] matches an <a> only when its href attribute
+   STARTS WITH "https" — used to visually flag secure links */
+.link-list a[href^="https"] {
+  color: #1b7a43;
+  font-weight: bold;
+}
+
+.link-list a[href^="https"]::after {
+  content: " 🔒";
+}
+
+/* plain links (http or relative) fall back to normal styling */
+.link-list a {
+  color: #4a6fa5;
+  text-decoration: none;
+}
+
+/* ============================================
+   2. PSEUDO-CLASSES
+   Style an element based on its STATE or POSITION,
+   not something in the HTML markup itself.
+   ============================================ */
+
+.fruit-list {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+}
+
+.fruit-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.25s ease;
+}
+
+/* :hover — state triggered by the mouse pointer */
+.fruit-list li:hover {
+  background-color: #dbe7f0;
+}
+
+/* :nth-child(odd) — position-based, zebra-striping every other row */
+.fruit-list li:nth-child(odd) {
+  background-color: #f0ede4;
+}
+
+.focus-demo {
+  padding: 8px 10px;
+  border: 2px solid #999;
+  border-radius: 6px;
+}
+
+/* :focus — state triggered when the element has keyboard/input focus */
+.focus-demo:focus {
+  border-color: #d9534f;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.25);
+}
+
+/* ============================================
+   3. PSEUDO-ELEMENTS
+   Target a specific PART of an element that isn't
+   a real node in the HTML (::before / ::after).
+   ============================================ */
+
+.quote-demo {
+  font-style: italic;
+  position: relative;
+  padding: 0 28px;
+}
+
+/* ::before inserts generated content ahead of the element's own content */
+.quote-demo::before {
+  content: "“";
+  font-size: 1.6em;
+  color: #4a6fa5;
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+
+/* ::after inserts generated content after the element's own content */
+.quote-demo::after {
+  content: "”";
+  font-size: 1.6em;
+  color: #4a6fa5;
+}
+
+/* ============================================
+   4. COMBINATORS
+   Control which relationship between two selectors
+   must hold for the rule to apply.
+   ============================================ */
+
+.combinator-demo {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Descendant combinator (space): matches a <p> ANYWHERE
+   inside .combinator-demo, no matter how deeply nested */
+.combinator-demo p {
+  color: #555;
+}
+
+/* Child combinator (>): matches only <li> elements that are
+   DIRECT children of the <ul> — the nested grandchild <li> is skipped */
+.combinator-demo > ul > li {
+  font-weight: bold;
+}
+
+.combinator-demo ul ul li {
+  font-weight: normal;
+  color: #888;
+}
+
+/* Adjacent sibling combinator (+): matches the <p> that comes
+   IMMEDIATELY after an <h4>, and only the first one */
+.combinator-demo h4 + p {
+  color: #1b7a43;
+  font-weight: bold;
+}
+
+/* General sibling combinator (~): matches ANY <p> that shares
+   the same parent and comes after the <h4>, not just the first */
+.combinator-demo h4 ~ p {
+  border-left: 3px solid #4a6fa5;
+  padding-left: 10px;
+}
